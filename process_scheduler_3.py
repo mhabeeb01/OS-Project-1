@@ -26,9 +26,7 @@ def processor_2_execute(process, arrival_time):
     memory = 8000
     memory_instances = memory / float(process[2])
     completion_time = gigahertz / cycles # completion time of this process
-    print(completion_time)
     completion_time /= memory_instances
-    print(completion_time)
     turnaroundtime =  arrival_time - completion_time
     if turnaroundtime < 0 :
         turnaroundtime = turnaroundtime * -1
@@ -63,7 +61,7 @@ for process in processes:
         get_turnaround(max_arr)
         max_arr = []
     '''
-    if process[1] >= mean_bt:
+    if int(process[1]) >= mean_bt:
         temp_p1 = temp_p1 + 1
         processor_1_execute(process, arrival_time_p1)
     else:
